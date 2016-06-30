@@ -22,13 +22,14 @@ def compute_days_between_dates(original_date, now):
     date1 = now
     date2 = datetime.datetime(now.year, original_date.month, original_date.day)
     dt = date1 - date2
-    days = int(dt.total_seconds() / 60 / 60 / 24)
+    #days = int(dt.total_seconds() / 60 / 60 / 24)
+    days = dt.days
     return days
 
 
 def print_birthday_information(days):
     if days < 0:
-        print('Your birthday is in {} days!'.format(-days))
+        print('Your birthday is in {} days!'.format(abs(days)))
     elif days > 0:
         print('You had your birthday already this year! {} days ago'.format(days))
     else:
